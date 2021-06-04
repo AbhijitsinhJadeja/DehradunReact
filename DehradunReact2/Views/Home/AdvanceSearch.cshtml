@@ -1,0 +1,87 @@
+﻿
+@model IEnumerable<DehradunReact2.Models.AdvanceSearch>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>AdvanceSearch</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossOrigin="anonymous" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" crossOrigin="anonymous"></script>
+</head>
+<body>
+    <div id="a1">
+        <form action="/TestModels/AdvanceSearch" method="Post" id="AdForm">
+            <label for="advanceLayer">Layer: </label>
+            <!--<select name="Layer" id="Layer" onchange="Check()">-->
+            @* <option value="">--Select Value--</option>*@
+            <!--<option value="busdepot">Bus Depot</option>-->
+            @*<option value="bankforlandmark">Banks</option>
+        <option value="parking">Parking</option>
+        <option value="medicalstore">MedicalStore</option>*@
+            <!--</select>-->
+
+            @Html.DropDownList("SelectTableVal",
+                    new SelectList(Enum.GetValues(typeof(AdvanceSearchTable))),
+                    "Select Table",
+                    new { @class = "form-control", @onChange = "SelectedValue(this)" })
+            <br> <br>
+            <table align="center">
+                <tr>
+                    @*<td> <input type="button" class="btn btn-dark" value="=" id="equal" onclick="Cal1()"></td>
+                    <td> <input type="button" class="btn btn-dark" value="&lt;&gt;" id="notequal" onclick="Cal2()"></td>
+                    <td> <input type="button" class="btn btn-dark" value="Like" id="like" onclick="Cal3()"></td>*@
+                </tr>
+                <tr>
+                    @*<td> <input type="button" class="btn btn-dark" value="&gt;" id="gt" onclick="Cal4()"></td>
+                    <td> <input type="button" class="btn btn-dark" value="&gt;&equals;" id="gtequal" onclick="Cal5()"></td>
+                    <td> <input type="button" class="btn btn-dark" value="%" id="perc" onclick="Cal6()"></td>*@
+                </tr>
+                <tr>
+                    @*<td> <input type="button" class="btn btn-dark" value="&lt;" id="lt" onclick="Cal7()"></td>
+                    <td> <input type="button" class="btn btn-dark" value="&lt;&equals;" id="ltequal" onclick="Cal8()"></td>
+                    <td> <input type="button" class="btn btn-dark" value="Not" id="not" onclick="Cal9()"></td>*@
+                </tr>
+                <tr>
+                    @*<td> <input type="button" class="btn btn-dark" value="And" id="And" onclick="Cal10()"></td>
+                    <td> <input type="button" class="btn btn-dark" value="Or" id="Or" onclick="Cal11()"></td>*@
+                </tr>
+            </table>
+
+            @*<input type='text' id="query" name="query"> <br>*@
+            <input type="text" name="Link" id="Link" style="display: none;"> <br>
+
+            <input type="submit" value="OK GO" class="btn bg-success" id="AdSearchbtn">
+
+            @*<input type="button" class="btn bg-warning" value="Show Result" id="ShowResult">*@
+            @*<input type="button" class="btn bg-danger" value="Close"   id="closeAdvance">*@
+            <div id="AdvanceSearchShow">
+                <table id="AdvanceSearchShowTable" border="1" rules="all" width=100%></table>
+            </div>
+        </form>
+    </div>
+    <script src="~/js/MapTest.js"></script>
+    <script>
+        function SelectedValue(ddlObject) {
+            //Selected value of dropdownlist
+            var selectedValue = ddlObject.value;
+            localStorage.setItem("blink", ddlObject.value);
+            //Selected text of dropdownlist
+            //var selectedText = ddlObject.options[ddlObject.selectedIndex].innerHTML;
+            var Form = document.getElementById("AdForm");
+            //Form.method = "POST";
+            Form.action = "/TestModels/" + selectedValue;
+            //alert popup with detail of seleceted value and text
+            //alert(" Selected Value: " + selectedValue );
+        }
+
+    </script>
+
+
+</body>
+</html>

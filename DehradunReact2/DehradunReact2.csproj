@@ -1,0 +1,49 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <UserSecretsId>aspnet-DehradunReact2-FDD3858C-8D4B-49C1-A1CC-76554800D3C3</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="wwwroot\lib\NewFolder\**" />
+    <Compile Remove="wwwroot\NewFolder1\**" />
+    <Compile Remove="wwwroot\NewFolder\**" />
+    <Content Remove="wwwroot\lib\NewFolder\**" />
+    <Content Remove="wwwroot\NewFolder1\**" />
+    <Content Remove="wwwroot\NewFolder\**" />
+    <EmbeddedResource Remove="wwwroot\lib\NewFolder\**" />
+    <EmbeddedResource Remove="wwwroot\NewFolder1\**" />
+    <EmbeddedResource Remove="wwwroot\NewFolder\**" />
+    <None Remove="wwwroot\lib\NewFolder\**" />
+    <None Remove="wwwroot\NewFolder1\**" />
+    <None Remove="wwwroot\NewFolder\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="wwwroot\css\about.css" />
+    <Content Remove="wwwroot\js\a.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="EntityFramework6.Npgsql" Version="6.4.1" />
+    <PackageReference Include="JavaScriptEngineSwitcher.Extensions.MsDependencyInjection" Version="3.3.0" />
+    <PackageReference Include="JavaScriptEngineSwitcher.V8" Version="3.12.1" />
+    <PackageReference Include="JavaScriptEngineSwitcher.V8.Native.win-x64" Version="3.12.1" />
+    <PackageReference Include="MailKit" Version="2.12.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="5.0.5" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="5.0.6" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="5.0.6" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.4">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.2" />
+    <PackageReference Include="Npgsql" Version="5.0.5" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="5.0.6" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL.Design" Version="1.1.0" />
+    <PackageReference Include="React.AspNet" Version="5.2.11" />
+  </ItemGroup>
+
+</Project>

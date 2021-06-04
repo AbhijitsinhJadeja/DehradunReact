@@ -1,0 +1,121 @@
+﻿@{
+    Layout = null;
+}
+
+<html>
+<head>
+    <title>Dehradun-CityGis</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.6.2/animate.min.css" rel="stylesheet">
+
+
+    <link href="~/css/Nav.css" rel="stylesheet" />
+
+    <link href="~/css/forcitygis.css" rel="stylesheet" />
+
+    <link href="~/css/main.css" rel="stylesheet" />
+
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <link rel="stylesheet" href="http://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.5.0/css/ol.css"
+          type="text/css">
+    <link href="~/css/scroll.css" rel="stylesheet" />
+
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en'
+            }, 'google_translate_element');
+        }
+    </script>
+
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+    <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.5.0/build/ol.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" data-auto-a11y="true"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+</head>
+<body class="example">
+    @*<div>
+        @User.Identity.Name
+    </div>*@
+
+    <div id="content"></div>
+    <script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/react/16.13.0/umd/react.development.js"></script>
+    <script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.13.0/umd/react-dom.development.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/remarkable/1.7.1/remarkable.min.js"></script>
+    <script src="@Url.Content("~/js/city4.jsx")"></script>
+    <script src="~/js/map.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript">
+        $(function () {
+            $('#AdvanceSearch').click(function () {
+                $('#iframeHolder').css("display", "block");
+                if (!$('#iframe').length) {
+                    $('#iframeHolder').html('<div style="margin-left:10%;margin-right:30%;z-index: 3;position: absolute;text-align: center;"><div><input type="button" onClick="blnk()" style="margin-left:80%" value="Blink" class="btn btn-success"></input><input type="button" onClick="clso()" style="margin-left:3%"  value="Close" class="btn btn-danger"></input></div><iframe id="iframe" src="@Url.Action("AdvanceSearch","Home")" width="700" height="300" style="z-index:10;position:absolute,align-item:center" id="IframeA"></iframe></div>');
+                }
+            });
+        });
+
+        function clso() {
+            $('#iframeHolder').css("display", "none");
+        }
+        function blnk() {
+            $('#blinkLayer').trigger('click');
+            document.getElementById("blinkLayer").click();
+        }
+
+
+        //var handle =  setInterval(function () {
+        //    if (window.location.href == "https://localhost:44395/Home/Citygis#/") {
+        //        alert(window.location.href);
+        //        var script = document.createElement("script");
+        //        script.setAttribute('src', '~/js/map.js');
+        //        document.head.appendChild(script);
+        //    } else {
+        //        alert("About");
+        //    }
+            
+        //}, 3000);
+
+        //function stop() {
+        //    clearInterval(handle);
+        //}
+
+
+
+    </script>
+
+    <script>
+            //jQuery('#content').bind('DOMSubtreeModified', function (event) {
+            //    var script = document.createElement("script");
+            //    script.type = "text/javascript";
+            //    script.src = "~/js/map.js";
+            //    document.head.appendChild(script);
+            //});
+
+        // $(function () {
+        //     $('#abcd').click(function () {
+        //         var script = document.createElement("script");
+        //        script.type = "text/javascript";
+        //        script.src = "~/js/map.js";
+        //        document.head.appendChild(script);
+        //    });
+        // });
+        //$(function () {
+        //    $('#abcd2').click(function () {
+        //        var script = document.createElement("script");
+        //        script.type = "text/javascript";
+        //        script.src = "~/js/map.js";
+        //        document.head.appendChild(script);
+        //    });
+        //});
+
+    </script>
+</body>
+</html>

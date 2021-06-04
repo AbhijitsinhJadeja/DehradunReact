@@ -1,0 +1,54 @@
+﻿.a1 {
+    background-color: #86bc42;
+    border-radius: 30px;
+    text-decoration: none;
+    color: white;
+    font-size: large;
+    font-weight: bold;
+    padding: 0.5% 1%;
+}
+
+.imgtag {
+    background-image: url('../img/loginimg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 200px;
+    width: 200px;
+}
+
+
+.imgtag2 {
+    background-image: url('../img/loginimg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 350px;
+    width: 350px;
+}
+
+
+
+.span1 {
+    font-weight: bold;
+    color: rgb(95, 90, 90);
+}
+
+.aboutcontent {
+    position: absolute;
+    top: 15%;
+    left: 55%;
+}
+
+.h5tag {
+    font-weight: bold;
+    font-size: large;
+}
+
+#btn1 {
+    color: white;
+    /* border-radius:8px; */
+    margin-top: 3%;
+    background-color: #86bc42;
+    border-radius: 30px;
+}

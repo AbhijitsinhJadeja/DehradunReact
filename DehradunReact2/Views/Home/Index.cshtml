@@ -1,0 +1,157 @@
+﻿@{
+    Layout = null;
+}
+
+<html>
+<head>
+    <title>Dehradun-CityGis</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+    @*1*@
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.6.2/animate.min.css" rel="stylesheet">
+
+  
+    <link href="~/css/Nav.css" rel="stylesheet" />
+
+    <link href="~/css/main3.css" rel="stylesheet" />
+    <link href="~/css/forcitygis2.css" rel="stylesheet" />
+
+    <link href="~/css/cerousel.css" rel="stylesheet" />
+    <link href="~/css/Nav.css" rel="stylesheet" />
+    <link href="~/css/about1.css" rel="stylesheet" />
+    <link href="~/css/style.css" rel="stylesheet" />
+
+
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <link rel="stylesheet" href="http://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.5.0/css/ol.css"
+          type="text/css">
+    <link href="~/css/scroll.css" rel="stylesheet" />
+
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en'
+            }, 'google_translate_element');
+        }
+    </script>
+
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+    <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.5.0/build/ol.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" data-auto-a11y="true"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+
+    <script src='https://unpkg.com/babel-standalone@6.26.0/babel.js'></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <script src='https://unpkg.com/react@16.3.1/umd/react.production.min.js'></script>
+    <script src='https://unpkg.com/react-dom@16.3.1/umd/react-dom.production.min.js'></script>
+    <script src='https://unpkg.com/react-router-dom@5.0.0/umd/react-router-dom.min.js'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/16.13.0/umd/react.development.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.13.0/umd/react-dom.development.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/remarkable/1.7.1/remarkable.min.js"></script>
+
+</head>
+<body class="example">
+
+    <div id="content"></div>
+    <script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/react/16.13.0/umd/react.development.js"></script>
+    <script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.13.0/umd/react-dom.development.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/remarkable/1.7.1/remarkable.min.js"></script>
+    <script src="@Url.Content("~/js/city6.jsx")"></script>
+    <script src="~/js/map.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript">
+        $(function () {
+            $('#AdvanceSearch').click(function () {
+                $('#iframeHolder').css("display", "block");
+                if (!$('#iframe').length) {
+                    $('#iframeHolder').html('<div style="margin-left:10%;margin-right:30%;z-index: 3;position: absolute;text-align: center;"><div><input type="button" onClick="clso()" style="margin-left:90%" value="Close" class="btn btn-danger"></input></div><iframe id="iframe" src="@Url.Action("AdvanceSearch","Home")" width="700" height="450" style="z-index:10;position:absolute,align-item:center" id="IframeA"></iframe></div>');
+                }
+            });
+        });
+
+
+        function clso() {
+            $('#iframeHolder').css("display", "none");
+        }
+
+
+        //var handle =  setInterval(function () {
+        //    if (window.location.href == "https://localhost:44395/Home/Citygis#/") {
+        //        alert(window.location.href);
+        //        var script = document.createElement("script");
+        //        script.setAttribute('src', '~/js/map.js');
+        //        document.head.appendChild(script);
+        //    } else {
+        //        alert("About");
+        //    }
+
+        //}, 3000);
+
+        //function stop() {
+        //    clearInterval(handle);
+        //}
+
+  
+
+    </script>
+
+    <script>
+
+        var script, tim;
+        var setint = setInterval(LoadMap, 500);
+        function LoadMap() {
+            var x = window.location.href;
+            if (x.match("Citygis")) {
+                tim = setTimeout(ScriptLoad, 100);
+            } 
+        }
+        function ScriptLoad() {
+            clearInterval(tim);
+            if (!document.getElementById("MapId")) {
+                script = document.createElement("script");
+                script.async = true;
+                script.type = "text/javascript";
+                script.src = "/js/map.js";
+                script.type = "module";
+                script.id = "MapId";
+                document.body.appendChild(script);
+            }
+        }
+                //jQuery('#content').bind('DOMSubtreeModified', function (event) {
+                //    var script = document.createElement("script");
+                //    script.type = "text/javascript";
+                //    script.src = "~/js/map.js";
+                //    document.head.appendChild(script);
+                //});
+
+            // $(function () {
+            //     $('#abcd').click(function () {
+            //         var script = document.createElement("script");
+            //        script.type = "text/javascript";
+            //        script.src = "~/js/map.js";
+            //        document.head.appendChild(script);
+            //    });
+            // });
+            //$(function () {
+            //    $('#abcd2').click(function () {
+            //        var script = document.createElement("script");
+            //        script.type = "text/javascript";
+            //        script.src = "~/js/map.js";
+            //        document.head.appendChild(script);
+            //    });
+            //});
+
+    </script>
+</body>
+</html>
